@@ -46,3 +46,37 @@ fact: if n > m then r = (m % n) = m &rarr; r = m
 so in the next step: m = n and n = r &rarr; m' = n, n' = r = m.
 so m and n are swapped and from now onwards m' > n'
 
+### 3. Change Algorithm E
+
+> Change [Algorithm E](../1.1%20-%20Algorithms/v01_ch01_n001.md) (for the sake of efficiency) so that all trivial replacement operations such as "m &larr; n" are avoided. Write this new algorithm in the style of Algorithm E, and call it Algorithm F.  
+
+current algorithm E: 
+
+1. r = m % n
+2. m &larr; n, n &larr; r
+3. r = m % n
+4. m &larr; n, n &larr; r
+5. ...
+
+Try to improve efficiency 
+
+1. r = m % n
+2. m &larr; r
+3. r = n % m
+4. n &larr; r
+5. r = m % n
+6. m &larr; r
+7. r = n % m
+8. n &larr; r
+9. ...
+
+**Solution**
+
+**Algorithm F**: Improved version of Algorithm E. reduced replacement operations by half.
+
+> F1. [Find Remainder] Divide m by n and let r be the remainder.  
+> F2. [Is r 0?] If r = 0, terminate algorithm, n is the answer. else go to F3.  
+> F3. [Reduce] m &larr; r  
+> F4. [Find Remainder] Divide n by m and let r be the remainder.  
+> F5. [Is r 0 ?] If r = 0, terminate algorithm, m is the answer. else go to F6.
+> F6. [Reduce] n &larr; r, go to F1. 
