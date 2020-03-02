@@ -107,4 +107,6 @@ at the start, m can be any integer, but they will fall into 5 categories shown a
 
 we can say that the average T<sub>5</sub> will be the average of those 5 cases  
 
+**Solution** 
+
 T<sub>5</sub> = (1+2+3+4+3)/5 = 13/5 = 2.6
