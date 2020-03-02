@@ -80,3 +80,31 @@ Try to improve efficiency
 > F4. [Find Remainder] Divide n by m and let r be the remainder.  
 > F5. [Is r 0 ?] If r = 0, terminate algorithm, m is the answer. else go to F6.
 > F6. [Reduce] n &larr; r, go to F1. 
+
+### 4. GCD of 2166 and 6099
+
+**Solution**
+
+57
+
+### 5. Show that the "Procedure for Reading This Set of Books" fails 3 out of 5 counts
+
+> Show that the "Procedure for Reading This Set of Books" that appears in the preface actually fails to be a genuine algorithm on three of our five counts! Also mention some differences in format between it and Algorithm E.
+
+**Solution**
+
+### 6. What is T<sub>5</sub>, the average number of times step E1 is performed when n = 5 ?  
+
+After E1 executes 1st time, the remainder will be in the set {0, 1, 2, 3, 4}.  
+
+remainder 0 -> E1 will only be executed once - 1  
+remainder 1 -> next time m = 5, n = 1. E1 will be executed twice - 2  
+remainder 2 -> next time m = 5, n = 2. E1 will be executed thrice - 3  
+remainder 3 -> next time m = 5, n = 3. E1 wil be executed four times - 4  
+remainder 4 -> next time m = 5, n = 4. E1 will be executed thrice - 3  
+
+at the start, m can be any integer, but they will fall into 5 categories shown above. 
+
+we can say that the average T<sub>5</sub> will be the average of those 5 cases  
+
+T<sub>5</sub> = (1+2+3+4+3)/5 = 13/5 = 2.6
